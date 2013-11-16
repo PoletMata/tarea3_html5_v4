@@ -14,7 +14,33 @@
 		</style>
 		<script src="javascript/jquery-1.10.2.min.js"></script>
 		<script>
-			// SU CODIGO AQUI						
+			// SU CODIGO AQUI		
+			$(function(){
+				var play=false;
+				$("#boton-reproducir").click(function(){
+					var elVideo = $("video")[0];
+	          			          		
+	          		if(play){
+	          			elVideo.pause();
+	          			$("#boton-reproducir").html("Reproducir");
+	          			$("#video").removeClass("sombras");                  		
+		          		$("#estado-video").html("Video Pausado");
+	          			play=false;
+	          		}
+	          		else{
+	          			elVideo.play();
+	          			$("#video").addClass("sombras");
+	          			$("#estado-video").html("Video Activo");
+	          			$("#boton-reproducir").html("Pausa");
+		          		play=true;
+
+
+	          		}
+				});
+				
+			
+			});		
+			
 		</script>
 	</head>
 	<body>
@@ -33,8 +59,7 @@
 			</p>
 
 			<p id="controles">
-				<a id="boton-reproducir">Reproducir</a>
-				<a id="boton-pausa">Pausa</a>
+				<a id="boton-reproducir">Reproducir</a>				
 			</p>
 
 		</div>
